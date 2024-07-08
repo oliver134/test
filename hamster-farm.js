@@ -6,8 +6,8 @@
 // @author       VladimirSauko
 // @match        https://*.hamsterkombat.io/*
 // @icon         https://hamsterkombat.io/images/icons/hamster-coin.png
-// @downloadURL
-// @updateURL
+// @downloadURL  https://raw.githubusercontent.com/oliver134/test/main/hamster-farm.js
+// @updateURL   https://raw.githubusercontent.com/oliver134/test/main/hamster-farm.js
 // @homepage     
 // ==/UserScript==
 
