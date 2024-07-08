@@ -8,29 +8,8 @@
 // @icon         https://hamsterkombat.io/images/icons/hamster-coin.png
 // @downloadURL
 // @updateURL
-// @homepage     https://github.com/GravelFire/HamsterKombatWebJS
+// @homepage     
 // ==/UserScript==
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 (function() {
@@ -205,57 +184,6 @@
         }
     });
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 (function() {
