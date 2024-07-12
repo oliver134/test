@@ -6,8 +6,8 @@
 // @match        https://*.hamsterkombat.io/*
 // @grant        none
 // @icon         https://hamsterkombat.io/images/icons/hamster-coin.png
-// @downloadURL  
-// @updateURL    
+// @downloadURL  https://github.com/oliver134/test/raw/main/hamster-farm.js
+// @updateURL    https://github.com/oliver134/test/raw/main/hamster-farm.js
 // @author       Emin M @emin.mir
 // @homepage     https://t.me/crypto_world_aze
 // ==/UserScript==
