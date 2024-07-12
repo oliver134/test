@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hamster farm
 // @namespace    https://hamsterkombat.io/*
-// @version      1.0
+// @version      1.1
 // @description  Automatic coin collector for Hamster
 // @match        https://*.hamsterkombat.io/*
 // @grant        none
