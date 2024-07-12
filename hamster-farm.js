@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Hamster farm
 // @namespace    https://hamsterkombat.io/*
-// @version      1.1
-// @description  
-// @author       VladimirSauko
+// @version      1.0
+// @description  Automatic coin collector for Hamster
 // @match        https://*.hamsterkombat.io/*
+// @grant        none
 // @icon         https://hamsterkombat.io/images/icons/hamster-coin.png
-// @downloadURL
-// @updateURL
-// @homepage     https://github.com/GravelFire/HamsterKombatWebJS
+// @downloadURL  
+// @updateURL    
+// @author       Emin M @emin.mir
+// @homepage     https://t.me/crypto_world_aze
 // ==/UserScript==
-
 (function() {
     'use strict';
 
@@ -507,13 +507,21 @@ setInterval(() => {
             isRunning = false; // Обновление состояния флага
             controlButton.innerText = 'Клик'; // Обновление текста на кнопке
             console.log(`${logPrefix}Auto click stopped`, styles.info);
+       localStorage.setItem('isRunning', 'false'); // Сохранение состояния в локальном хранилище
         } else {
             isRunning = true; // Обновление состояния флага
             controlButton.innerText = 'Стоп'; // Обновление текста на кнопке
-            console.log(`${logPrefix}Auto click started`, styles.info);
+            console.log('Auto click started');
             performRandomClick(); // Начало выполнения кликов
+            localStorage.setItem('isRunning', 'true'); // Сохранение состояния в локальном хранилище
         }
     }
+
+
+
+
+
+
 
     // Создание и вставка кнопки управления
     const controlButton = document.createElement('button');
@@ -536,6 +544,14 @@ setInterval(() => {
     controlButton.id = 'autoClick'; // Добавляем id кнопке
     controlButton.addEventListener('click', toggleClicks); // Добавляем обработчик событий на кнопку
 
+  // Проверка сохраненного состояния при загрузке страницы
+    if (localStorage.getItem('isRunning') === 'true') {
+        isRunning = true;
+        controlButton.innerText = 'Стоп';
+        performRandomClick();
+    } else {
+        controlButton.innerText = 'Клик';
+    }
     document.body.appendChild(controlButton); // Добавляем кнопку на страницу
 
     console.log(`${logPrefix}Script loaded. To start auto click, click on 'Клик'.`, styles.starting);
@@ -637,17 +653,29 @@ toggleButton.addEventListener('click', toggleViolentmonkey);
 
 
 
-(function() {
-    'use strict';
-
-    // Функция для перезагрузки страницы
+ // Функция для перезагрузки страницы
     function refreshPage() {
         location.reload();
     }
 
-    // Установка интервала для перезагрузки страницы (3600000 мс = 1 час)
-    setInterval(refreshPage, 3600000);
-})();
+    // Функция для установки случайного интервала
+    function setRandomInterval() {
+        // Время в миллисекундах
+        const minTime = 57 * 60 * 1000; // 57 минут
+        const maxTime = 94 * 60 * 1000; // 1 час 34 минуты
+
+        // Случайное время в заданном интервале
+        const randomTime = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+
+        // Установка таймера для перезагрузки страницы
+        setTimeout(() => {
+            refreshPage();
+            setRandomInterval(); // Устанавливаем новый интервал после перезагрузки
+        }, randomTime);
+    }
+
+    // Устанавливаем первый случайный интервал
+    setRandomInterval();
 
 
 
